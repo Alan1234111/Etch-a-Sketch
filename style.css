@@ -1,0 +1,66 @@
+:root {
+  --number-col-row: 4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-areas:
+    "drawing"
+    "customizaton";
+  background-color: #ededed;
+}
+
+.drawing {
+  grid-area: drawing;
+}
+
+/* .drawing__name { */
+/* } */
+
+.drawing__board {
+  display: grid;
+  grid-template-columns: repeat(var(--number-col-row), calc(100vw / var(--number-col-row)));
+  grid-template-rows: repeat(var(--number-col-row), calc(100vw / var(--number-col-row)));
+}
+
+.drawing__board div {
+  border: 1px solid black;
+}
+
+.customization {
+  grid-area: customizaton;
+  display: flex;
+  flex-direction: column;
+}
+
+.customization__color {
+  -webkit-appearance: none;
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+.customization__color::-webkit-color-swatch {
+  border: none;
+  border-radius: 10px;
+  padding: 0;
+}
+.customization__color::-webkit-color-swatch-wrapper {
+  border: none;
+  border-radius: 10px;
+  padding: 0;
+}
+
+.btn {
+}
+
+.customization__range {
+}
