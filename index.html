@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Etch-a-Sketch</title>
   </head>
@@ -34,8 +40,17 @@
       <input type="color" class="customization__color" />
       <button class="customization__color-mode btn active">Color mode</button>
       <button class="customization__rainbow-mode btn">Rainbow mode</button>
+      <button class="customization__eraser btn">Eraser</button>
       <button class="customization__clear btn">Clear</button>
-      <input class="customization__range" type="range" />
+      <div class="customization__range-container">
+        <p class="customization__range-numbers">
+          <span class="customization__range-number">16</span> x
+          <span class="customization__range-number">16</span>
+        </p>
+        <input class="customization__range" type="range" />
+      </div>
     </section>
+
+    <footer class="footer"><a href="https://github.com/Alan1234111/Etch-a-Sketch">&#169 Alan Github</a></footer>
   </body>
 </html>
