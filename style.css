@@ -125,7 +125,9 @@ body {
 
 @media (orientation: landscape) {
   body {
-    grid-template-areas: "customizaton drawing .";
+    grid-template-areas:
+      "customizaton drawing ."
+      "footer footer footer";
     margin-top: 100px;
   }
 
@@ -143,6 +145,7 @@ body {
     width: 70px;
     height: 70px;
     transition: 0.2s;
+    cursor: pointer;
   }
 
   .customization__color:hover {
@@ -153,6 +156,7 @@ body {
     width: 15vw;
     padding: 15px;
     transition: 0.2s;
+    cursor: pointer;
   }
 
   .customization__range {
@@ -171,5 +175,10 @@ body {
   .active {
     background-color: var(--primary-dark);
     color: var(--primary-light);
+  }
+
+  .footer {
+    grid-area: footer;
+    margin-top: 100px;
   }
 } ;
