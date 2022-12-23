@@ -27,10 +27,11 @@
 
 const modeButtons = document.querySelectorAll(".btn");
 const customizationColor = document.querySelector(".customization__color");
+const customizationRange = document.querySelector(".customization__range");
 
 let drawingColor = "black";
 
-function changeMode() {
+function changeDrawingMode() {
   if (!this.classList.contains("customization__clear")) {
     modeButtons.forEach((modeButton) => modeButton.classList.remove("active"));
   }
@@ -54,4 +55,9 @@ function changeMode() {
   }
 }
 
-modeButtons.forEach((modeButton) => modeButton.addEventListener("click", changeMode));
+function addDrawingsElements() {
+  console.log("ds");
+}
+
+modeButtons.forEach((modeButton) => modeButton.addEventListener("click", changeDrawingMode));
+customizationRange.addEventListener("change", addDrawingsElements);
