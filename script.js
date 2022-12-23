@@ -24,3 +24,24 @@
 // when clicked and push
 //  divs change to chosen color
 //
+
+const modeButtons = document.querySelectorAll(".btn");
+
+function changeMode() {
+  if (!this.classList.contains("customization__clear")) {
+    modeButtons.forEach((modeButton) => modeButton.classList.remove("active"));
+  }
+
+  if (this.classList.contains("customization__color-mode")) {
+    this.classList.add("active");
+    console.log(this);
+  } else if (this.classList.contains("customization__rainbow-mode")) {
+    this.classList.add("active");
+  } else if (this.classList.contains("customization__eraser")) {
+    this.classList.add("active");
+  } else if (this.classList.contains("customization__clear")) {
+    console.log("clear");
+  }
+}
+
+modeButtons.forEach((modeButton) => modeButton.addEventListener("click", changeMode));
