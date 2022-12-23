@@ -26,6 +26,9 @@
 //
 
 const modeButtons = document.querySelectorAll(".btn");
+const customizationColor = document.querySelector(".customization__color");
+
+let drawingColor = "black";
 
 function changeMode() {
   if (!this.classList.contains("customization__clear")) {
@@ -34,13 +37,20 @@ function changeMode() {
 
   if (this.classList.contains("customization__color-mode")) {
     this.classList.add("active");
-    console.log(this);
+    drawingColor = customizationColor.value;
   } else if (this.classList.contains("customization__rainbow-mode")) {
     this.classList.add("active");
+    let red = Math.floor(Math.random() * 255);
+    let green = Math.floor(Math.random() * 255);
+    let blue = Math.floor(Math.random() * 255);
+    let randomColor = `rgb(${red} ${green} ${blue})`;
+    drawingColor = randomColor;
   } else if (this.classList.contains("customization__eraser")) {
     this.classList.add("active");
+    drawingColor = "white";
   } else if (this.classList.contains("customization__clear")) {
-    console.log("clear");
+    const boardDivs = document.querySelectorAll(".drawing__board div");
+    boardDivs.forEach((boardDiv) => (boardDiv.style.backgroundColor = "white"));
   }
 }
 
