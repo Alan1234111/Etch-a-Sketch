@@ -56,7 +56,7 @@ function changeDrawingMode() {
 }
 
 function addDrawingsElements() {
-  console.log("ds");
+  console.log(this.value);
 }
 
 modeButtons.forEach((modeButton) => modeButton.addEventListener("click", changeDrawingMode));
