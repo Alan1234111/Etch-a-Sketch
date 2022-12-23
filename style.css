@@ -106,3 +106,30 @@ body {
   text-decoration: none;
   color: var(--primary-dark);
 }
+
+@media (orientation: landscape) {
+  body {
+    grid-template-areas: "customization drawing ";
+  }
+
+  .drawing__board {
+    grid-template-columns: repeat(
+      var(--number-col-row),
+      calc(500px / var(--number-col-row))
+    );
+    grid-template-rows: repeat(
+      var(--number-col-row),
+      calc(500px / var(--number-col-row))
+    );
+    justify-content: center;
+  }
+
+  .btn {
+    width: 20vw;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--primary-dark);
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+  }
+} ;
