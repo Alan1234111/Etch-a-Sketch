@@ -32,19 +32,17 @@ body {
 
 .drawing__board {
   display: grid;
-  grid-template-columns: repeat(
-    var(--number-col-row),
-    calc(80vw / var(--number-col-row))
-  );
-  grid-template-rows: repeat(
-    var(--number-col-row),
-    calc(80vw / var(--number-col-row))
-  );
-  justify-content: center;
+  grid-template-columns: repeat(var(--number-col-row), 1fr);
+  grid-template-rows: repeat(var(--number-col-row), 1fr);
+  width: 80vw;
+  height: 80vw;
+  margin: 0 auto;
+  /* border: 1px solid var(--primary-dark); */
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.drawing__board div {
-  border: 1px solid black;
+.drawing__board {
+  background-color: white;
 }
 
 .customization {
@@ -63,6 +61,7 @@ body {
   border-radius: 100%;
   width: 80px;
   height: 80px;
+  background-color: var(--primary-dark);
 }
 
 .customization__color::-webkit-color-swatch {
@@ -95,6 +94,23 @@ body {
   text-align: center;
 }
 
+.customization__range {
+  -webkit-appearance: none !important;
+  background-color: var(--secondary-light);
+  border: 1px solid var(--primary-dark);
+  border-radius: 15px;
+  height: 10px;
+  width: 50vw;
+}
+
+.customization__range::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  background: var(--primary-dark);
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+}
+
 .footer {
   margin: 0 auto;
   font-size: 20px;
@@ -109,27 +125,51 @@ body {
 
 @media (orientation: landscape) {
   body {
-    grid-template-areas: "customization drawing ";
+    grid-template-areas: "customizaton drawing .";
+    margin-top: 100px;
   }
 
   .drawing__board {
-    grid-template-columns: repeat(
-      var(--number-col-row),
-      calc(500px / var(--number-col-row))
-    );
-    grid-template-rows: repeat(
-      var(--number-col-row),
-      calc(500px / var(--number-col-row))
-    );
     justify-content: center;
+    width: 35vw;
+    height: 35vw;
+  }
+
+  .customization {
+    margin: auto 0;
+  }
+
+  .customization__color {
+    width: 70px;
+    height: 70px;
+    transition: 0.2s;
+  }
+
+  .customization__color:hover {
+    scale: 1.1;
   }
 
   .btn {
-    width: 20vw;
-    padding: 20px;
-    border-radius: 8px;
+    width: 15vw;
+    padding: 15px;
+    transition: 0.2s;
+  }
+
+  .customization__range {
+    -webkit-appearance: none !important;
+    background-color: var(--secondary-light);
     border: 1px solid var(--primary-dark);
-    background-color: var(--primary-light);
-    color: var(--primary-dark);
+    border-radius: 15px;
+    height: 10px;
+    width: 15vw;
+  }
+
+  .btn:hover {
+    scale: 1.1;
+  }
+
+  .active {
+    background-color: var(--primary-dark);
+    color: var(--primary-light);
   }
 } ;
